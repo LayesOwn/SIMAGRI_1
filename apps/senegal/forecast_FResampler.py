@@ -43,6 +43,7 @@ sce_col_names=[ "sce_name", "Trimester1", "AN1","BN1", "AN2","BN2",
                 "IR_4_DOY", "IR_4_amt", "IR_5_DOY", "IR_5_amt", "AutoIR_depth", "AutoIR_thres", "AutoIR_eff", 
                 "CropPrice", "NFertCost", "SeedCost","IrrigCost", "OtherVariableCosts", "FixedCosts"
 ],
+# je teste sur le github
 
 Position= { "Dakar":  [14.700047543225823, -17.50001290971342 ] , 
             "Bambey": [15.000134707867867, -16.49997854796095 ], 
