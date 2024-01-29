@@ -26,7 +26,7 @@ from datetime import date
 import datetime    #to convert date to doy or vice versa
 import calendar
 import bisect   # an element into sorted list 
-
+#import folium 
 import graph
 
 from apps.senegal.write_SNX import writeSNX_clim, writeSNX_frst_FR 

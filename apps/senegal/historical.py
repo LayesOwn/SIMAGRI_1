@@ -37,11 +37,6 @@ sce_col_names=[ "sce_name", "Crop", "Cultivar", "stn_name", "PltDate", "FirstYea
                 "CropPrice", "NFertCost", "SeedCost", "IrrigCost","OtherVariableCosts", "FixedCosts"
 ],  #  
 
-#Fert_4_DOY=0,
-#N_4_Kg=0,
-#P_4_Kg=0,
-#K_4_Kg=0,
-
 Position= { "Dakar":  [14.700047543225823, -17.50001290971342 ] , 
             "Bambey": [15.000134707867867, -16.49997854796095 ], 
             "Mbacke": [14.80013483323102, -15.900042920979626 ] , 
