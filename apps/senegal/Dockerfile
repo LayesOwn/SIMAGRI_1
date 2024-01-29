@@ -10,10 +10,13 @@
 # WORKDIR /home/SIMAGRI/
 # RUN pip3 install -r requirements.txt
 
-FROM irikesha/simagridssat:latest
+#FROM irikesha/simagridssat:latest
+FROM iridl/simagridssat:latest
 
-RUN apt-get install -y zlib1g zlib1g-dev libjpeg-dev
-RUN pip3 install exp-mixture-model
+#RUN apt-get install -y zlib1g zlib1g-dev libjpeg-dev
+#RUN pip3 install exp-mixture-model
+RUN apt-get install zlib1g
+RUN apt-get install zlib1g-dev
 
 COPY ./*.py /home/SIMAGRI/
 COPY ./apps/ /home/SIMAGRI/apps/
