@@ -17,6 +17,7 @@ from dash.dependencies import Input, Output, State
 from dash_extensions import Download
 from dash.exceptions import PreventUpdate
 #import folium
+import dash_leaflet as dl
 #from folium.plugins import MarkerCluster
 from app import app
 
@@ -36,6 +37,8 @@ sce_col_names=[ "sce_name", "Crop", "Cultivar", "stn_name", "PltDate", "FirstYea
                 "IR_4_DOY", "IR_4_amt", "IR_5_DOY", "IR_5_amt", "AutoIR_depth", "AutoIR_thres", "AutoIR_eff",
                 "CropPrice", "NFertCost", "SeedCost", "IrrigCost","OtherVariableCosts", "FixedCosts"
 ],  #  
+
+# Posision de sites
 
 Position= { "Dakar":  [14.700047543225823, -17.50001290971342 ] , 
             "Bambey": [15.000134707867867, -16.49997854796095 ], 
@@ -64,12 +67,6 @@ Position= { "Dakar":  [14.700047543225823, -17.50001290971342 ] ,
             "Oussouye":  [12.50016758003306, -16.499989276855867 ],
             "Ziguinchor":  [12.500157105519985, -16.00004292103381 ],
           }
-#a=folium.Map(location=(14.700047543225823, -17.50001290971342))      # afficher la carte
-
-#for ville,coords in Position.items():
-#     folium.Marker(coords,popup=f"<b>{ville}</b><br>{coords}",
-#     tooltip=ville, icon=folium.Icon(icon="cloud")).add_to(a)
-
 
 layout = html.Div([
     dcc.Store(id="memory-yield-table"),  #to save fertilizer application table
@@ -404,7 +401,7 @@ layout = html.Div([
                           
                          
                         ],
-#                        value="15-15-15",
+                         # value="15-15-15",
                         clearable=False,
                             )    
 
@@ -612,7 +609,6 @@ layout = html.Div([
                       style={"display":"none"}
                       
                       ),          
-#
                         dbc.Row(
                         dbc.FormText(" Application d'engrais",color="green",className="text-center"),
                                ),
@@ -1276,10 +1272,8 @@ layout = html.Div([
       className="p-1",
       ),
                                                                     
-  dbc.Col([ ## RIGHT HAND SIDE -- CARDS WITH SIMULATION ETC
-  
-# dcc.Graph(figure=html.Iframe(srcDoc=a.get_root().render(), width="30%", height="30")), #   # Affichage de la cate
-
+  dbc.Col([ ## RIGHT HAND SIDE -- CARDS WITH SIMULATION ETC   la colonne de droite
+      
         html.Div([
          #   dbc.Label(" on va mettre la carte ici pour le tester"),
           html.Div( # SIMULATIONS

@@ -71,5 +71,6 @@ dependencies:
     - toml==0.10.2
     - typed-ast==1.4.3
     - typing-extensions==3.10.0.0
+    - leaflet==1.9.4
 prefix: /home/kewa/miniconda3/envs/simagri
 

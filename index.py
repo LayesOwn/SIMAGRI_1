@@ -34,6 +34,7 @@ elif country == "senegal":
     # from apps.senegal import historical_FR
     from apps.senegal import forecast_FResampler as forecast
     # from apps.senegal import forecast_WGEN as forecast
+    from apps.senegal import Carte         # j'importe la carte
 elif country == "colombia":
     from apps.colombia import about
     from apps.colombia import historical
@@ -65,6 +66,7 @@ apps = {
             "/about": about.layout,
             "/historical": historical.layout, 
             "/forecast": forecast.layout,
+            "/Carte": Carte.layout,               # j'integre la carte
         },
     },
     "colombia": { 
