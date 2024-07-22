@@ -17,6 +17,7 @@ FROM iridl/simagridssat:latest
 #RUN pip3 install exp-mixture-model
 RUN apt-get install zlib1g
 RUN apt-get install zlib1g-dev
+#RUN apt-get install folium
 
 COPY ./*.py /home/SIMAGRI/
 COPY ./apps/ /home/SIMAGRI/apps/

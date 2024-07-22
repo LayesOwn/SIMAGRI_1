@@ -6,6 +6,7 @@ import pathlib
 import re
 import base64
 import io
+import sys
 
 import dash
 import dash_html_components as html
@@ -16,16 +17,15 @@ import dash_table
 from dash.dependencies import Input, Output, State
 from dash_extensions import Download
 from dash.exceptions import PreventUpdate
-#import folium
-import dash_leaflet as dl
-#from folium.plugins import MarkerCluster
+import folium
+#import dash_leaflet as dl
 from app import app
 
 from os import path # path
 import os
 import subprocess  #to run executable
 from datetime import date
-import datetime    #to convert date to doy or vice versa
+import datetime    #to convert date to doy or vice vers
 import calendar
 import bisect   # an element into sorted list
 
