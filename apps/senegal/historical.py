@@ -17,7 +17,7 @@ import dash_table
 from dash.dependencies import Input, Output, State
 from dash_extensions import Download
 from dash.exceptions import PreventUpdate
-import folium
+#import folium
 #import dash_leaflet as dl
 from app import app
 
