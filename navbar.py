@@ -1,7 +1,7 @@
 import dash_html_components as html
 import dash_bootstrap_components as dbc
 
-def navbar(logo, country,carte, tutorial, feedback):
+def navbar(logo, country, tutorial, feedback):
     # tutorial = dbc.NavItem(dbc.NavLink("Tutorial", target="_blank", href=tutorial, ),)
     # feedback = dbc.NavItem(dbc.NavLink("Feedback", target="_blank", href=feedback, ),)
     # NAVBAR
@@ -26,7 +26,7 @@ def navbar(logo, country,carte, tutorial, feedback):
                 dbc.NavItem(dbc.NavLink("Analyse historique", href="/historical", ),),
                 # dbc.NavItem(dbc.NavLink("Forecast Analysis", href="/forecast", className="d-none", ),),
                 dbc.NavItem(dbc.NavLink("Analyse des prévisions", href="/forecast", ),), #EJ(7/27/2021)
-                dbc.NavItem(dbc.NavLink("Carte", href="/Carte"),), # lien pour visualiser la carte
+                #dbc.NavItem(dbc.NavLink("Carte", href="/Carte"),), # lien pour visualiser la carte
                 tutorial,
                 feedback,
             ],
