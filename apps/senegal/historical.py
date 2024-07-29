@@ -6,7 +6,6 @@ import pathlib
 import re
 import base64
 import io
-import sys
 
 import dash
 import dash_html_components as html
@@ -18,15 +17,15 @@ from dash.dependencies import Input, Output, State
 from dash_extensions import Download
 from dash.exceptions import PreventUpdate
 import folium
-
-# import dash_leaflet as dl
+#import dash_leaflet as dl
+#from folium.plugins import MarkerCluster
 from app import app
 
 from os import path # path
 import os
 import subprocess  #to run executable
 from datetime import date
-import datetime    #to convert date to doy or vice vers
+import datetime    #to convert date to doy or vice versa
 import calendar
 import bisect   # an element into sorted list
 
@@ -68,6 +67,18 @@ Position= { "Dakar":  [14.700047543225823, -17.50001290971342 ] ,
             "Oussouye":  [12.50016758003306, -16.499989276855867 ],
             "Ziguinchor":  [12.500157105519985, -16.00004292103381 ],
           }
+carte = folium.Map(location=(14.10010404228193, -15.800000005654653), zoom_start=9)
+
+for ville, coords in Position.items():
+    folium.Marker(
+        coords, 
+        popup=f"<b>{ville}</b><br>{coords}", 
+        tooltip=ville, 
+        icon=folium.Icon(icon="cloud")
+    ).add_to(carte)
+
+# Enregistrer la carte en tant que fichier HTML
+carte.save("carte_senegal.html"),
 
 layout = html.Div([
     dcc.Store(id="memory-yield-table"),  #to save fertilizer application table
@@ -1277,6 +1288,28 @@ layout = html.Div([
       
         html.Div([
          #   dbc.Label(" on va mettre la carte ici pour le tester"),
+         html.Div([
+           html.Header(
+                html.B("Carte"),               # L'entete de la carte
+              className=" card-header"
+              ),
+           html.Div([                         # affichage de la carte
+             
+             html.Iframe(
+                    id='map',
+                    srcDoc=open('carte_senegal.html', 'r').read(),
+                    width='100%',
+                    height='100%',
+                    style={"border": "none"}
+                )
+                    ],
+                    className="overflow-auto",
+                    style={"height": "10cm"}
+                    ),
+           
+         ]),
+         
+         
           html.Div( # SIMULATIONS
             html.Div([
               html.Header(

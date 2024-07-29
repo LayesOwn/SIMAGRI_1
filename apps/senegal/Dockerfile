@@ -1,24 +1,14 @@
-# FROM ubuntu:18.04
-# RUN apt-get update; apt-get install python3.8 python3-pip make ca-certificates cmake gfortran -y
-
-# COPY ./DSSAT /home/SIMAGRI/DSSAT
-# WORKDIR /home/SIMAGRI/DSSAT/dssat-csm-os/build
-# RUN cmake -DCMAKE_INSTALL_PREFIX=/home/SIMAGRI/DSSAT/dssat-base-files -DCMAKE_BUILD_TYPE=RELEASE ..; 
-# RUN make; make install
-
-# COPY ./requirements.txt /home/SIMAGRI
-# WORKDIR /home/SIMAGRI/
-# RUN pip3 install -r requirements.txt
-
-#FROM irikesha/simagridssat:latest
+# Utilisez l'image de base spécifique
 FROM iridl/simagridssat:latest
 
-#RUN apt-get install -y zlib1g zlib1g-dev libjpeg-dev
-#RUN pip3 install exp-mixture-model
-RUN apt-get install zlib1g
-RUN apt-get install zlib1g-dev
-#RUN apt-get install folium
+# Installer les dépendances nécessaires
+#RUN apt-get update && apt-get install -y zlib1g zlib1g-dev
+RUN apt-get update && apt-get install -y zlib1g zlib1g-dev python3-pip
+# Installer le module folium
+RUN pip3 install branca==0.5.0
+RUN pip3 install folium==0.12.1.post1
 
+# Copier les fichiers de l'application dans le conteneur
 COPY ./*.py /home/SIMAGRI/
 COPY ./apps/ /home/SIMAGRI/apps/
 COPY ./assets/ /home/SIMAGRI/assets/
@@ -26,5 +16,8 @@ COPY ./data/ /home/SIMAGRI/data/
 COPY ./shared/ /home/SIMAGRI/shared/
 COPY ./TEST_SN/* DSSAT/dssat-base-files/
 
+# Définir le répertoire de travail
 WORKDIR /home/SIMAGRI/
+
+# Commande pour exécuter l'application
 CMD ["python3", "index.py", "senegal"]
