@@ -17,7 +17,7 @@ from dash.dependencies import Input, Output, State
 from dash_extensions import Download
 from dash.exceptions import PreventUpdate
 import folium
-#import dash_leaflet as dl
+import dash_leaflet as dl
 #from folium.plugins import MarkerCluster
 from app import app
 
@@ -36,7 +36,8 @@ sce_col_names=[ "sce_name", "Crop", "Cultivar", "stn_name", "PltDate", "FirstYea
                 "Fert_4_DOY", "N_4_Kg", "P_4_Kg", "K_4_Kg", "P_level", "IR_method", "IR_1_DOY", "IR_1_amt", "IR_2_DOY", "IR_2_amt", "IR_3_DOY", "IR_3_amt",
                 "IR_4_DOY", "IR_4_amt", "IR_5_DOY", "IR_5_amt", "AutoIR_depth", "AutoIR_thres", "AutoIR_eff",
                 "CropPrice", "NFertCost", "SeedCost", "IrrigCost","OtherVariableCosts", "FixedCosts"
-],  #  
+], 
+######################################################################################################### 
 
 # Posision de sites
 
@@ -67,7 +68,7 @@ Position= { "Dakar":  [14.700047543225823, -17.50001290971342 ] ,
             "Oussouye":  [12.50016758003306, -16.499989276855867 ],
             "Ziguinchor":  [12.500157105519985, -16.00004292103381 ],
           }
-carte = folium.Map(location=(14.10010404228193, -15.800000005654653), zoom_start=9)
+carte = folium.Map(location=(14.10010404228193, -15.800000005654653), zoom_start=8)
 
 for ville, coords in Position.items():
     folium.Marker(
@@ -80,6 +81,12 @@ for ville, coords in Position.items():
 # Enregistrer la carte en tant que fichier HTML
 carte.save("carte_senegal.html"),
 
+#####################################################################
+# essaie carte avec leaflet
+######################################################
+
+
+#####################################################
 layout = html.Div([
     dcc.Store(id="memory-yield-table"),  #to save fertilizer application table
     dcc.Store(id="memory-sorted-yield-table"),  #to save fertilizer application table
