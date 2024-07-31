@@ -41,50 +41,107 @@ sce_col_names=[ "sce_name", "Crop", "Cultivar", "stn_name", "PltDate", "FirstYea
 
 # Posision de sites
 
-Position= { "Dakar":  [14.700047543225823, -17.50001290971342 ] , 
-            "Bambey": [15.000134707867867, -16.49997854796095 ], 
-            "Mbacke": [14.80013483323102, -15.900042920979626 ] , 
-            "Fatick_Niakhar": [14.500155792376464, -16.400032192151638],
-            "Foundiougne":  [13.90012496236718, -16.400010734495066 ],
-            "Birkilane":  [14.10010404228193, -15.800000005654653 ],
-            "Kounguel":  [14.00014572838203, -14.80002146332832 ],
-            "Kaolack":  [ 14.100156070240521, -16.10000000565467],
-            "Nioro du Rip":   [13.700156340499975, -15.800032192171074 ],
-            "Kolda":  [12.800198769551196, -14.60000000568494 ],
-            "Medina Yoroufoula":  [13.100156731601537, -14.600032192184925],
-            "Velingrara":  [12.90017777424403, -14.100000005682656 ],
-            "Linguere":  [15.300155213889152, -15.500042920966724 ],
-            "Louga":  [ 15.500103371403704, -16.0000214632902],
-           "Saint Louis":  [16.100133989082607, -16.49997854793152],
-            "Sedhiou":  [12.700198848162987, -15.6000429210294 ],
-            "Koumpentoum":  [14.00017695879087, -14.600032192163923],
-            "Tambacounda 1":  [13.100177630843898, -13.300021463349408],
-            "Tambacounda 2":  [13.800177111914401, -13.700010734497527 ],
-            "Tambacounda 3":  [13.90015620632161, -14.100042921001881 ],
-            "Mbour":  [14.40019742960074, -17.00000000564732 ],
-            "Thies":  [14.800186697639713, -17.000000005637286 ],
-            "Tivaoune":  [ 15.000196887377449, -16.800021463303363],
-            "Bignona":  [ 13.000188156663333, -16.200010734516013],
-            "Oussouye":  [12.50016758003306, -16.499989276855867 ],
-            "Ziguinchor":  [12.500157105519985, -16.00004292103381 ],
-          }
-carte = folium.Map(location=(14.10010404228193, -15.800000005654653), zoom_start=8)
+#Position= { "Dakar":  [14.700047543225823, -17.50001290971342 ] , 
+#            "Bambey": [15.000134707867867, -16.49997854796095 ], 
+#            "Mbacke": [14.80013483323102, -15.900042920979626 ] , 
+#            "Fatick_Niakhar": [14.500155792376464, -16.400032192151638],
+#            "Foundiougne":  [13.90012496236718, -16.400010734495066 ],
+#            "Birkilane":  [14.10010404228193, -15.800000005654653 ],
+#            "Kounguel":  [14.00014572838203, -14.80002146332832 ],
+#            "Kaolack":  [ 14.100156070240521, -16.10000000565467],
+#            "Nioro du Rip":   [13.700156340499975, -15.800032192171074 ],
+#            "Kolda":  [12.800198769551196, -14.60000000568494 ],
+#            "Medina Yoroufoula":  [13.100156731601537, -14.600032192184925],
+#            "Velingrara":  [12.90017777424403, -14.100000005682656 ],
+#            "Linguere":  [15.300155213889152, -15.500042920966724 ],
+#            "Louga":  [ 15.500103371403704, -16.0000214632902],
+#           "Saint Louis":  [16.100133989082607, -16.49997854793152],
+#            "Sedhiou":  [12.700198848162987, -15.6000429210294 ],
+#            "Koumpentoum":  [14.00017695879087, -14.600032192163923],
+#            "Tambacounda 1":  [13.100177630843898, -13.300021463349408],
+#            "Tambacounda 2":  [13.800177111914401, -13.700010734497527 ],
+#            "Tambacounda 3":  [13.90015620632161, -14.100042921001881 ],
+#            "Mbour":  [14.40019742960074, -17.00000000564732 ],
+#            "Thies":  [14.800186697639713, -17.000000005637286 ],
+#            "Tivaoune":  [ 15.000196887377449, -16.800021463303363],
+#            "Bignona":  [ 13.000188156663333, -16.200010734516013],
+#            "Oussouye":  [12.50016758003306, -16.499989276855867 ],
+#            "Ziguinchor":  [12.500157105519985, -16.00004292103381 ],
+#          }
+#carte = folium.Map(location=(14.10010404228193, -15.800000005654653), zoom_start=8)
 
-for ville, coords in Position.items():
-    folium.Marker(
-        coords, 
-        popup=f"<b>{ville}</b><br>{coords}", 
-        tooltip=ville, 
-        icon=folium.Icon(icon="cloud")
-    ).add_to(carte)
+#for ville, coords in Position.items():
+#    folium.Marker(
+#        coords, 
+#        popup=f"<b>{ville}</b><br>{coords}", 
+#        tooltip=ville, 
+#        icon=folium.Icon(icon="cloud")
+#    ).add_to(carte)
 
 # Enregistrer la carte en tant que fichier HTML
-carte.save("carte_senegal.html"),
+#carte.save("carte_senegal.html"),
 
 #####################################################################
 # essaie carte avec leaflet
 ######################################################
-
+# Dictionary containing city names and their coordinates
+Position = { 
+    "0002": [14.700047543225823, -17.50001290971342],   # Dakar
+    "0032": [14.7104375,-16.4829243],                   # Bambey
+    "4871": [14.80013483323102, -15.900042920979626],   # Mbacke
+    "1669": [14.500155792376464, -16.400032192151638],  # Fatick
+    "2014": [13.90012496236718, -16.400010734495066],   # Foundiougne
+    "2843": [14.10010404228193, -15.800000005654653],   # Birkelane
+    "2454": [14.00014572838203, -14.80002146332832],    # Koungheul
+    "3292": [14.100156070240521, -16.10000000565467],   # Kaolack
+    "5699": [13.700156340499975, -15.800032192171074],  # Nioro Du Rip
+    "4051": [12.800198769551196, -14.60000000568494],   # Kolda
+    "2127": [13.100156731601537, -14.600032192184925],  # Medina Yoroufoula
+    "5976": [12.90017777424403, -14.100000005682656],   # Velingara
+    "5884": [15.300155213889152, -15.500042920966724],  # Linguere
+    "2898": [15.500103371403704, -16.0000214632902],    # Louga
+    "5017": [16.100133989082607, -16.49997854793152],   # Saint Louis
+    "1758": [12.700198848162987, -15.6000429210294],    # Sedhiou
+    "0171": [14.00017695879087, -14.600032192163923],   # Koumpentoum
+    "4506": [13.100177630843898, -13.300021463349408],  # Tambacounda 1
+    "3317": [13.800177111914401, -13.700010734497527],  # Tambacounda 2
+    "3366": [13.90015620632161, -14.100042921001881],   # Tambacounda 3
+    "6083": [14.40019742960074, -17.00000000564732],    # Mbour
+    "3167": [14.800186697639713, -17.000000005637286],  # Thies
+    "5664": [15.000196887377449, -16.800021463303363],  # Tivaoune
+    "6120": [13.000188156663333, -16.200010734516013],  # Bignona
+    "1171": [12.50016758003306, -16.499989276855867],   # Oussouye
+    "5457": [12.500157105519985, -16.00004292103381],   # Ziguinchor
+}
+# Mapping region names to their codes
+region_names = {
+    "0002": "Dakar",
+    "0032": "Bambey",
+    "4871": "Mbacke",
+    "1669": "Fatick",
+    "2014": "Foundiougne",
+    "2843": "Birkelane",
+    "2454": "Koungheul",
+    "3292": "Kaolack",
+    "5699": "Nioro Du Rip",
+    "4051": "Kolda",
+    "2127": "Medina Yoroufoula",
+    "5976": "Velingara",
+    "5884": "Linguere",
+    "2898": "Louga",
+    "5017": "Saint Louis",
+    "1758": "Sedhiou",
+    "0171": "Koumpentoum",
+    "4506": "Tambacounda 1",
+    "3317": "Tambacounda 2",
+    "3366": "Tambacounda 3",
+    "6083": "Mbour",
+    "3167": "Thies",
+    "5664": "Tivaoune",
+    "6120": "Bignona",
+    "1171": "Oussouye",
+    "5457": "Ziguinchor"
+}
 
 #####################################################
 layout = html.Div([
@@ -121,42 +178,69 @@ layout = html.Div([
                     dbc.Col([
                       dcc.Dropdown(
                       id="SNstation",
-                      # options=[
-                      #   {"label": "Bambey", "value": "CNRA"},
-                      #   {"label": "Nioro", "value": "NRIP"},
-                      #   {"label": "Sinthiou Malem", "value": "SNTH"}
-                      # ],
-                      # value="CNRA",
-                      options=[
-                        {"label": "Dakar(14.7N, 17.5W),", "value": "0002"}, #1
-                        {"label": "Bambey(15.0N, 16.5W)", "value": "0032"}, #2
-                        {"label": "Mbacke(14.8N, 15.9W)", "value": "4871"}, #3
-                        {"label": "Fatick(14.5N, 16.4W)", "value": "1669"}, #4
-                        {"label": "Foundiougne(13.9N, 16.4W)", "value": "2014"}, #5
-                        {"label": "Birkelane(14.1N, 15.8W)", "value": "2843"}, #6
-                        {"label": "Koungheul(14.0N, 14.8W)", "value": "2454"}, #7
-                        {"label": "Kaolack(14.1N, 16.1W)", "value": "3292"}, #8
-                        {"label": "Nioro Du Rip(13.7N, 15.8W)", "value": "5699"}, #9
-                        {"label": "Kolda(12.8N, 14.6W)", "value": "4051"}, #10
-                        {"label": "Medina Yoroufoula(13.1N, 14.6W)", "value": "2127"}, #11
-                        {"label": "Velingara(12.9N, 14.1W)", "value": "5976"}, #12
-                        {"label": "Linguere(15.3N, 15.5W)", "value": "5884"}, #13
-                        {"label": "Louga(15.5N, 16.0W)", "value": "2898"}, #14
-                        {"label": "Saint Louis(16.1N, 16.5W)", "value": "5017"}, #15
-                        {"label": "Sedhiou(12.7N, 15.6W)", "value": "1758"}, #16
-                        {"label": "Koumpentoum(14.0N, 14.6W)", "value": "0171"}, #17
-                        {"label": "Tambacounda(13.1N, 13.3W)", "value": "4506"}, #18
-                        {"label": "Tambacounda(13.8N, 13.7W)", "value": "3317"}, #19
-                        {"label": "Tambacounda(13.9N, 14.1W)", "value": "3366"}, #20
-                        {"label": "Mbour(14.4N, 17.0W)", "value": "6083"}, #21
-                        {"label": "Thies(14.8N, 17.0W)", "value": "3167"}, #22
-                        {"label": "Tivaoune(15.0N, 16.8W)", "value": "5664"}, #23
-                        {"label": "Bignona(13.0N, 16.2W)", "value": "6120"}, #24
-                        {"label": "Oussouye(12.5N, 16.5W)", "value": "1171"}, #25
-                        {"label": "Ziguinchor(12.5N, 16.0W)", "value": "5457"}, #25
+                        options=[ 
+                          {"label": "Dakar", "value": "0002"},
+                          {"label": "Bambey", "value": "0032"},
+                          {"label": "Mbacke", "value": "4871"},
+                          {"label": "Fatick", "value": "1669"},
+                          {"label": "Foundiougne", "value": "2014"},
+                          {"label": "Birkelane", "value": "2843"},
+                          {"label": "Koungheul", "value": "2454"},
+                          {"label": "Kaolack", "value": "3292"},
+                          {"label": "Nioro Du Rip", "value": "5699"},
+                          {"label": "Kolda", "value": "4051"},
+                          {"label": "Medina Yoroufoula", "value": "2127"},
+                          {"label": "Velingara", "value": "5976"},
+                          {"label": "Linguere", "value": "5884"},
+                          {"label": "Louga", "value": "2898"},
+                          {"label": "Saint Louis", "value": "5017"},
+                          {"label": "Sedhiou", "value": "1758"},
+                          {"label": "Koumpentoum", "value": "0171"},
+                          {"label": "Tambacounda 1", "value": "4506"},
+                          {"label": "Tambacounda 2", "value": "3317"},
+                          {"label": "Tambacounda 3", "value": "3366"},
+                          {"label": "Mbour", "value": "6083"},
+                          {"label": "Thies", "value": "3167"},
+                          {"label": "Tivaoune", "value": "5664"},
+                          {"label": "Bignona", "value": "6120"},
+                          {"label": "Oussouye", "value": "1171"},
+                          {"label": "Ziguinchor", "value": "5457"},
                       ],
-                      value="0032",  #"CNRA"
+                      
+                      value="2843", 
                       clearable=False,
+                      
+       #               options=[
+       #                 {"label": "Dakar(14.7N, 17.5W),", "value": "0002"}, #1
+       #               {"label": "Bambey(15.0N, 16.5W)", "value": "0032"}, #2
+      #                {"label": "Mbacke(14.8N, 15.9W)", "value": "4871"}, #3
+      #                  {"label": "Fatick(14.5N, 16.4W)", "value": "1669"}, #4
+      #                  {"label": "Foundiougne(13.9N, 16.4W)", "value": "2014"}, #5
+      #                  {"label": "Birkelane(14.1N, 15.8W)", "value": "2843"}, #6
+      #                  {"label": "Koungheul(14.0N, 14.8W)", "value": "2454"}, #7
+      #                  {"label": "Kaolack(14.1N, 16.1W)", "value": "3292"}, #8
+      #                  {"label": "Nioro Du Rip(13.7N, 15.8W)", "value": "5699"}, #9
+      #                  {"label": "Kolda(12.8N, 14.6W)", "value": "4051"}, #10
+      #                  {"label": "Medina Yoroufoula(13.1N, 14.6W)", "value": "2127"}, #11
+      #                  {"label": "Velingara(12.9N, 14.1W)", "value": "5976"}, #12
+      #                  {"label": "Linguere(15.3N, 15.5W)", "value": "5884"}, #13
+      #                  {"label": "Louga(15.5N, 16.0W)", "value": "2898"}, #14
+      #                  {"label": "Saint Louis(16.1N, 16.5W)", "value": "5017"}, #15
+      #                  {"label": "Sedhiou(12.7N, 15.6W)", "value": "1758"}, #16
+      #                  {"label": "Koumpentoum(14.0N, 14.6W)", "value": "0171"}, #17
+      #                  {"label": "Tambacounda(13.1N, 13.3W)", "value": "4506"}, #18
+      #                  {"label": "Tambacounda(13.8N, 13.7W)", "value": "3317"}, #19
+      #                  {"label": "Tambacounda(13.9N, 14.1W)", "value": "3366"}, #20
+      #                  {"label": "Mbour(14.4N, 17.0W)", "value": "6083"}, #21
+      #                  {"label": "Thies(14.8N, 17.0W)", "value": "3167"}, #22
+      #                  {"label": "Tivaoune(15.0N, 16.8W)", "value": "5664"}, #23
+      #                  {"label": "Bignona(13.0N, 16.2W)", "value": "6120"}, #24
+      #                  {"label": "Oussouye(12.5N, 16.5W)", "value": "1171"}, #25
+      #                  {"label": "Ziguinchor(12.5N, 16.0W)", "value": "5457"}, #25
+      #                ],
+      #                value="0032",  #"CNRA"
+      #                clearable=False,
+      
                       ),
                     ],
                     className="py-2",
@@ -1296,22 +1380,28 @@ layout = html.Div([
         html.Div([
          #   dbc.Label(" on va mettre la carte ici pour le tester"),
          html.Div([
-           html.Header(
-                html.B("Carte"),               # L'entete de la carte
-              className=" card-header"
-              ),
+        #   html.Header(
+        #        html.B("Carte"),               # L'entete de la carte
+        #      className=" card-header"
+        #      ),
            html.Div([                         # affichage de la carte
              
-             html.Iframe(
-                    id='map',
-                    srcDoc=open('carte_senegal.html', 'r').read(),
-                    width='100%',
-                    height='100%',
-                    style={"border": "none"}
-                )
+        #     html.Iframe(
+        #            id='map',
+        #            srcDoc=open('carte_senegal.html', 'r').read(),
+        #            width='100%',
+        #            height='100%',
+        #            style={"border": "none"}
+        #        )
+           html.H2("Carte des zones de culture"),
+            dl.Map(center=[14.10010404228193, -15.800000005654653], zoom=8, id='map', style={'width': '100%', 'height': '400px'},
+                   children=[
+                     dl.TileLayer(),
+                     dl.LayerGroup(id='markers')
+                            ]),
                     ],
-                    className="overflow-auto",
-                    style={"height": "10cm"}
+              #      className="overflow-auto",
+              #      style={"height": "10cm"}
                     ),
            
          ]),
@@ -1922,6 +2012,30 @@ def afficher1(visibility_state):
 #        return {"display":"none"}
 
 #Dynamic call back for different cultivars for a selected target crop
+#######################################################################
+## Affichag de la carte avec leaflet
+@app.callback(
+    Output('map', 'center'),
+    Output('map', 'zoom'),
+    Output('markers', 'children'),
+    Input('SNstation', 'value')
+)
+def update_map(selected_region):
+    coords = Position[selected_region]
+    markers = [
+        dl.Marker(
+            position=Position[region], 
+            children=[
+                dl.Tooltip(region_names[region]),
+                dl.Popup(region_names[region])
+            ]
+        ) for region in Position
+    ]
+    return coords, 10, markers
+
+
+###########################################################################
+
 @app.callback(
     Output("cultivar-dropdown", "options"),
     Input("crop-radio", "value"))
