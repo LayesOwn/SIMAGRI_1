@@ -140,7 +140,7 @@ layout = html.Div([
                     dbc.Label("2) Station", html_for="SNstation_frst", sm=3, align="start", ),
                     dbc.Col([
                       dcc.Dropdown(
-                      id="SNstation_frst",
+                      id="SNstation",#_frst
                       options=[ 
                           {"label": "Dakar", "value": "0002"},
                           {"label": "Bambey", "value": "0032"},
@@ -1411,7 +1411,7 @@ layout = html.Div([
       #              height='100%',
       #              style={"border": "none"}
       #          )
-           html.H2("Carte des zones de culture"),
+           html.H3("Carte des zones de culture"),
             dl.Map(center=[14.10010404228193, -15.800000005654653], zoom=8, id='map', style={'width': '100%', 'height': '400px'},
                    children=[
                      dl.TileLayer(),
@@ -1671,24 +1671,24 @@ def func(station_id):
 
 #######################################################################
 ## Affichag de la carte avec leaflet
-@app.callback(
-    Output('map', 'center'),
-    Output('map', 'zoom'),
-    Output('markers', 'children'),
-    Input('SNstation_frst', 'value')
-)
-def update_map(selected_region):
-    coords = Position[selected_region]
-    markers = [
-        dl.Marker(
-            position=Position[region], 
-            children=[
-                dl.Tooltip(region_names[region]),
-                dl.Popup(region_names[region])
-            ]
-        ) for region in Position
-    ]
-    return coords, 10, markers
+#@app.callback(
+#    Output('map', 'center'),
+#    Output('map', 'zoom'),
+#   Output('markers', 'children'),
+#    Input('SNstation_frst', 'value')
+#)
+#def update_map(selected_region):
+#    coords = Position[selected_region]
+#    markers = [
+#        dl.Marker(
+#            position=Position[region], 
+#            children=[
+#               dl.Tooltip(region_names[region]),
+#               dl.Popup(region_names[region])
+#            ]
+ #       ) for region in Position
+ #   ]
+ #   return coords, 10, markers
 
 
 ###########################################################################
@@ -1999,7 +1999,7 @@ def download_scenarios(n_clicks, scenario_table):
               Input("write-button-state_frst", "n_clicks"),
               Input("import-sce_frst", "contents"),
               State("import-sce_frst", "filename"),
-              State("SNstation_frst", "value"),
+              State("SNstation", "value"),#_frst
               State("trimester1", "value"),
               State("AN1", "value"),
               State("BN1", "value"),

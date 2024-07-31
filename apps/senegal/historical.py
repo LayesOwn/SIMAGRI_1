@@ -1393,7 +1393,7 @@ layout = html.Div([
         #            height='100%',
         #            style={"border": "none"}
         #        )
-           html.H2("Carte des zones de culture"),
+           html.H3("Carte des zones de culture"),
             dl.Map(center=[14.10010404228193, -15.800000005654653], zoom=8, id='map', style={'width': '100%', 'height': '400px'},
                    children=[
                      dl.TileLayer(),
