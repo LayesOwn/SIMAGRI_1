@@ -8,4 +8,4 @@ $BATCH(RICE)
 ! Debug        : C:\DSSAT47\DSCSM047.EXE RICER047 " B DSSBatch.v47"
 !
 @FILEX                                                                                        TRTNO     RP     SQ     OP     CO
-C:\DSSAT46\Rice\RICER047.SNX                                                                     1      1      0      0      0
+C:\DSSAT46\Rice\SNRITEMP.SNX                                                                     1      1      0      0      0
