@@ -2972,10 +2972,17 @@ def run_create_figure(n_clicks, sce_in_table, slider_range):
             if scenarios.Crop[i] == "PN":
                 args = "./dscsm047 CRGRO047 B DSSBatch.V47"
                 # args = "./dscsm047 B DSSBatch.V47"
-            elif scenarios.Crop[i] == "ML":
+            elif scenarios.Crop[i] == "ML": #Millets 047
                 args = "./dscsm047 MLCER047 B DSSBatch.V47"
+                
+            elif scenarios.Crop[i] == "RI": #Rice
+                args = "./dscsm047 RICER047 B DSSBatch.V47"
+            
+            elif scenarios.Crop[i] == "NM": #Millets 048
+                args = "./dscsm047 NMCER048 B DSSBatch.V47"  
             else:  # SG
                 args = "./dscsm047 SGCER047 B DSSBatch.V47"
+            
 
             fout_name = f"SN{scenarios.Crop[i]}{scenario}.OSU"
             arg_mv = f"mv Summary.OUT {fout_name}"
