@@ -259,6 +259,7 @@ layout = html.Div([
                         {"label": "Arachide", "value": "PN"},
                         {"label": "Mil", "value": "ML"},
                         {"label": "Sorgho", "value": "SG"},
+                        {"label": "Riz", "value": "RI"},
                       ],
                       labelStyle = {"display": "inline-block","marginRight": 10},
                       value="SG",
@@ -1611,10 +1612,12 @@ app.css.config.serve_locally = True
 
 cultivar_options = {
     "PN": ["IB0090 VAR_FLEUR_11","IB0091 VAR_73-33"],
-    "ML": ["IB0044 CIVT"],
+    "ML": ["IB0001 Souna 3","IB0002 Thialack 2","IB0003 SL 423","IB0004 SL 28","IB0005 SL 169"],
     # "MZ": ["CIMT01 BH540","CIMT02 MELKASA-1","CIMT17 BH660-FAW-40%", "CIMT19 MELKASA2-FAW-40%", "CIMT21 MELKASA-LowY"],
     # "WH": ["CI2021 KT-KUB", "CI2022 RMSI", "CI2023 Meda wolabu", "CI2024 Sofumer", "CI2025 Hollandi", "CI2018 ET-MED", "CI2019 ET-LNG"],
-    "SG": ["IB0066 Fadda-D","IB0069 IS15401-D","IB0070 Soumba-D","IB0071 Faourou-D"]
+    "SG": ["IB0066 Fadda-D","IB0069 IS15401-D","IB0070 Soumba-D","IB0071 Faourou-D"],
+#  les options des varietes pour le riz
+    "RI": ["NERI14 SENLONG","NERI81 SENSHOR"]     
 }
 soil_options = {
     "PN": ["CNCNioro14(S)","CNCNNior15(SL)", "CNBambey14(LS)", #from Adama
@@ -1624,7 +1627,12 @@ soil_options = {
           "CNNior14_S(S)", "CNNior15_S(SL)", "CNBamb14_S(LS)", #from Adama-SRGF adjusted],
           "SN00840067(SL)", "SN00840080(SL)", "SN00840042(SL)", "SN00840056(SL)"],
     "SG": ["SN-N15Rain(S)", "SN-N15Irrg(S)", "SN-N16Rain(S)", "SN-N16Irrg(S)", "SN-S15Rain(LS)","SN-S16Rain(LS)",#from Ganyo(2019) sorghum
-          "SN00840067(SL)", "SN00840080(SL)", "SN00840042(SL)", "SN00840056(SL)"]
+          "SN00840067(SL)", "SN00840080(SL)", "SN00840042(SL)", "SN00840056(SL)"],
+# Ajout du des options sol pour le Riz 
+ 
+    "RI": ["CNCNioro14(S)","CNCNNior15(SL)", "CNBambey14(LS)",
+          "CNNior14_S(S)", "CNNior15_S(SL)", "CNBamb14_S(LS)", 
+          "SN00840067(SL)", "SN00840080(SL)", "SN00840042(SL)", "SN00840056(SL)"]     # les types de sol pour le riz
 }
 type_angrais = {
     "NPK": ["15-15-15","15-10-10", "6-10-20"],
@@ -2974,12 +2982,8 @@ def run_create_figure(n_clicks, sce_in_table, slider_range):
                 # args = "./dscsm047 B DSSBatch.V47"
             elif scenarios.Crop[i] == "ML": #Millets 047
                 args = "./dscsm047 MLCER047 B DSSBatch.V47"
-                
             elif scenarios.Crop[i] == "RI": #Rice
-                args = "./dscsm047 RICER047 B DSSBatch.V47"
-            
-            elif scenarios.Crop[i] == "NM": #Millets 048
-                args = "./dscsm047 NMCER048 B DSSBatch.V47"  
+                args = "./dscsm047 RICER047 B DSSBatch.V47"  
             else:  # SG
                 args = "./dscsm047 SGCER047 B DSSBatch.V47"
             

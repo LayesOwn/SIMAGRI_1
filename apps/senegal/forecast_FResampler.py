@@ -310,6 +310,7 @@ layout = html.Div([
                         {"label": "Arachide", "value": "PN"}, 
                         {"label": "Mil", "value": "ML"}, 
                         {"label": "Sorgho", "value": "SG"},
+                        {"label": "Riz", "value": "RI"},
                       ],
                       labelStyle = {"display": "inline-block","marginRight": 10},
                       value="SG",
@@ -2803,6 +2804,8 @@ def run_create_figure(n_clicks, sce_in_table):
                 # args = "./dscsm047 B DSSBatch.V47"
             elif scenarios.Crop[i] == "ML":
                 args = "./dscsm047 MLCER047 B DSSBatch.V47"
+            elif scenarios.Crop[i] == "RI": #Rice
+                args = "./dscsm047 RICER047 B DSSBatch.V47"                
             else:  # SG
                 args = "./dscsm047 SGCER047 B DSSBatch.V47"
 
