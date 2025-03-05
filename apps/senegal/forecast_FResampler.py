@@ -1632,10 +1632,12 @@ app.css.config.serve_locally = True
 
 cultivar_options = {
     "PN": ["IB0090 VAR_FLEUR_11","IB0091 VAR_73-33"],
-    "ML": ["IB0044 CIVT"],
+    "ML": ["IB0001 Souna 3","IB0002 Thialack 2","IB0003 SL 423","IB0004 SL 28","IB0005 SL 169"],
     # "MZ": ["CIMT01 BH540","CIMT02 MELKASA-1","CIMT17 BH660-FAW-40%", "CIMT19 MELKASA2-FAW-40%", "CIMT21 MELKASA-LowY"],
     # "WH": ["CI2021 KT-KUB", "CI2022 RMSI", "CI2023 Meda wolabu", "CI2024 Sofumer", "CI2025 Hollandi", "CI2018 ET-MED", "CI2019 ET-LNG"],
-    "SG": ["IB0066 Fadda-D","IB0069 IS15401-D","IB0070 Soumba-D","IB0071 Faourou-D"]
+    "SG": ["IB0066 Fadda-D","IB0069 IS15401-D","IB0070 Soumba-D","IB0071 Faourou-D"],
+    #  les options des varietes pour le riz
+    "RI": ["NERI14 SENLONG","NERI81 SENSHOR"]
 }
 soil_options = {
     "PN": ["CNCNioro14(S)","CNCNNior15(SL)", "CNBambey14(LS)", #from Adama
