@@ -10,13 +10,13 @@
  
 *FIELDS
 @L ID_FIELD WSTA....  FLSA  FLOB  FLDT  FLDD  FLDS  FLST SLTX  SLDP  ID_SOIL    FLNAME        
- 4 50178301 5017       -99   -99   -99   -99   -99   -99 -99    -99  SN_0840080  -99
+ 4 50178301 5017       -99   -99   -99   -99   -99   -99 -99    -99  SN00840080  -99
 @L ...........XCRD ...........YCRD .....ELEV .............AREA .SLEN .FLWR .SLAS
  4             -99             -99       -99               -99   -99   -99   -99
 
 *INITIAL CONDITIONS
 @C   PCR ICDAT  ICRT  ICND  ICRN  ICRE  ICWD ICRES ICREN ICREP ICRIP ICRID ICNAME
- 1    MZ 83151   150   -99     1     1   -99   -99   -99   -99     0   -99 -99
+ 1    RI 83151   150   -99     1     1   -99   -99   -99   -99     0   -99 -99
 @C  ICBL  SH2O  SNH4  SNO3
  1    20   .10    .6     1
  1    40   .09    .6     1

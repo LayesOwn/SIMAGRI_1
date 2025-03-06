@@ -1630,9 +1630,7 @@ soil_options = {
           "SN00840067(SL)", "SN00840080(SL)", "SN00840042(SL)", "SN00840056(SL)"],
 # Ajout du des options sol pour le Riz 
  
-    "RI": ["CNCNioro14(S)","CNCNNior15(SL)", "CNBambey14(LS)",
-          "CNNior14_S(S)", "CNNior15_S(SL)", "CNBamb14_S(LS)", 
-          "SN00840067(SL)", "SN00840080(SL)", "SN00840042(SL)", "SN00840056(SL)"]     # les types de sol pour le riz
+    "RI": ["SN00840080"]     # les types de sol pour le riz
 }
 type_angrais = {
     "NPK": ["15-15-15","15-10-10", "6-10-20"],

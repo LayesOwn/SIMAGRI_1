@@ -2,10 +2,10 @@ $BATCH(RICE)
 !
 ! Directory    : C:\DSSAT47\Rice
 ! Command Line : C:\DSSAT47\DSCSM047.EXE RICER04 B DSSBatch.v47
-! Crop         : Rice   
-! Experiment   : SNRITEMP.SNX
+! Crop         : RICE    
+! Experiment   : ITHY8201.MLX
 ! ExpNo        : 1
 ! Debug        : C:\DSSAT47\DSCSM047.EXE RICER04 " B DSSBatch.v47"
 !
 @FILEX                                                                                        TRTNO     RP     SQ     OP     CO
-C:\DSSAT46\Rice\SNRITEMP.SNX                                                                     1      1      0      0      0
+C:\DSSAT47\Rice\SNRITEMP.SNX                                                                     1      1      0      0      0
