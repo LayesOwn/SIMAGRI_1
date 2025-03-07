@@ -1630,7 +1630,8 @@ soil_options = {
           "SN00840067(SL)", "SN00840080(SL)", "SN00840042(SL)", "SN00840056(SL)"],
 # Ajout du des options sol pour le Riz 
  
-    "RI": ["SN00840080"]     # les types de sol pour le riz
+    "RI": ["SN-N15Rain(S)", "SN-N15Irrg(S)", "SN-N16Rain(S)", "SN-N16Irrg(S)", "SN-S15Rain(LS)","SN-S16Rain(LS)",#from Ganyo(2019) sorghum
+          "SN00840067(SL)", "SN00840080(SL)", "SN00840042(SL)", "SN00840056(SL)"]     # les types de sol pour le riz
 }
 type_angrais = {
     "NPK": ["15-15-15","15-10-10", "6-10-20"],
@@ -2981,7 +2982,7 @@ def run_create_figure(n_clicks, sce_in_table, slider_range):
             elif scenarios.Crop[i] == "ML": #Millets 047
                 args = "./dscsm047 MLCER047 B DSSBatch.V47"
             elif scenarios.Crop[i] == "RI": #Rice
-                args = "./dscsm047 RICER047 B DSSBatch.V47"  
+                args = "./dscsm047 RICER04 B DSSBatch.V47"  
             else:  # SG
                 args = "./dscsm047 SGCER047 B DSSBatch.V47"
             
