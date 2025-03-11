@@ -1617,7 +1617,7 @@ cultivar_options = {
     # "WH": ["CI2021 KT-KUB", "CI2022 RMSI", "CI2023 Meda wolabu", "CI2024 Sofumer", "CI2025 Hollandi", "CI2018 ET-MED", "CI2019 ET-LNG"],
     "SG": ["IB0066 Fadda-D","IB0069 IS15401-D","IB0070 Soumba-D","IB0071 Faourou-D"],
 #  les options des varietes pour le riz
-    "RI": ["NERI14 SENLONG","NERI81 SENSHOR"]     
+    "RI": ["NERI14 SENLONG","NERI81 SENSHOR"],     
 }
 soil_options = {
     "PN": ["CNCNioro14(S)","CNCNNior15(SL)", "CNBambey14(LS)", #from Adama
@@ -1630,8 +1630,9 @@ soil_options = {
           "SN00840067(SL)", "SN00840080(SL)", "SN00840042(SL)", "SN00840056(SL)"],
 # Ajout du des options sol pour le Riz 
  
-    "RI": ["SN-N15Rain(S)", "SN-N15Irrg(S)", "SN-N16Rain(S)",#from Ganyo(2019) sorghum
-          "SN00840067", "SN00840080", "SN00840042", "SN00840056"]     # les types de sol pour le riz
+    "RI": ["CNCNioro14(S)", "CNBambey14(LS)", #from Adama
+          "CNNior14_S(S)", "CNBamb14_S(LS)", #from Adama-SRGF adjusted],
+          ],     # les types de sol pour le riz
 }
 type_angrais = {
     "NPK": ["15-15-15","15-10-10", "6-10-20"],
