@@ -1647,7 +1647,12 @@ soil_options = {
           "CNNior14_S(S)", "CNNior15_S(SL)", "CNBamb14_S(LS)", #from Adama-SRGF adjusted],
           "SN00840067(SL)", "SN00840080(SL)", "SN00840042(SL)", "SN00840056(SL)"],
     "SG": ["SN-N15Rain(S)", "SN-N15Irrg(S)", "SN-N16Rain(S)", "SN-N16Irrg(S)", "SN-S15Rain(LS)","SN-S16Rain(LS)",#from Ganyo(2019) sorghum
-          "SN00840067(SL)", "SN00840080(SL)", "SN00840042(SL)", "SN00840056(SL)"]
+          "SN00840067(SL)", "SN00840080(SL)", "SN00840042(SL)", "SN00840056(SL)"],
+    # Ajout du des options sol pour le Riz 
+ 
+    "RI": ["CNCNioro14(S)", "CNBambey14(LS)", #from Adama
+          "CNNior14_S(S)", "CNBamb14_S(LS)", #from Adama-SRGF adjusted],
+          ],     # les types de sol pour le riz
 }
 
 Wdir_path = DSSAT_FILES_DIR    #for linux systemn

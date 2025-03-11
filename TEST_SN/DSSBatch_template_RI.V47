@@ -3,7 +3,7 @@ $BATCH(GRAIN RICE)
 ! Directory    : C:\DSSAT47\Rice
 ! Command Line : C:\DSSAT47\DSCSM047.EXE RICER047 B DSSBatch_template_RI.v47
 ! Crop         : Rice   
-! Experiment   : SNRITEMP.SNX
+! Experiment   : DTSP8502.RIX
 ! ExpNo        : 1
 ! Debug        : C:\DSSAT47\DSCSM047.EXE RICER047 B DSSBatch_template_RI.v47
 !
