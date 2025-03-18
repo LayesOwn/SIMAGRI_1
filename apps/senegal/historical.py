@@ -1617,7 +1617,8 @@ cultivar_options = {
     # "WH": ["CI2021 KT-KUB", "CI2022 RMSI", "CI2023 Meda wolabu", "CI2024 Sofumer", "CI2025 Hollandi", "CI2018 ET-MED", "CI2019 ET-LNG"],
     "SG": ["IB0066 Fadda-D","IB0069 IS15401-D","IB0070 Soumba-D","IB0071 Faourou-D"],
 #  les options des varietes pour le riz
-    "RI": ["NERI14 SENLONG","NERI81 SENSHOR"],     
+    "RI": ["NERI14 NERICA Long","NERI81 NERICA Court"], 
+   # "RI": ["NERI14 SENLONG","NERI81 SENSHOR"],    
 }
 soil_options = {
     "PN": ["CNCNioro14(S)","CNCNNior15(SL)", "CNBambey14(LS)", #from Adama
