@@ -1631,9 +1631,10 @@ soil_options = {
           "SN00840067(SL)", "SN00840080(SL)", "SN00840042(SL)", "SN00840056(SL)"],
 # Ajout du des options sol pour le Riz 
  
-    "RI": ["CNCNioro14(S)", "CNBambey14(LS)", #from Adama
-          "CNNior14_S(S)", "CNBamb14_S(LS)", #from Adama-SRGF adjusted],
-          ],     # les types de sol pour le riz
+    "RI": ["CNCNioro14(S)","CNCNNior15(SL)", "CNBambey14(LS)", #from Adama
+          "CNNior14_S(S)", "CNNior15_S(SL)", "CNBamb14_S(LS)", #from Adama-SRGF adjusted],
+          "SN00840067(SL)", "SN00840080(SL)", "SN00840042(SL)", "SN00840056(SL)"],
+               # les types de sol pour le riz
 }
 type_angrais = {
     "NPK": ["15-15-15","15-10-10", "6-10-20"],
@@ -3446,7 +3447,8 @@ def writeSNX_main_hist(Wdir_path,station,start_year,end_year,planting_date,crop,
             temp_SH2O = IC_w_ratio * (fc[nline] - wp[nline]) + wp[nline]  # EJ(6/25/2015): initial AWC=70% of maximum AWC
             if soil_depth[nline] <= 30:
                 #Estimate NO3[ppm] from the user input [N kg/ha] by assuming Buld density = 1.4 g/cm3
-                temp_SNO3 = i_NO3 * 10.0 / (1.4 * 30) # **EJ(2/18/2021)
+              #  temp_SNO3 = i_NO3 * 10.0 / (1.4 * 30) # **EJ(2/18/2021)
+                temp_SNO3 = float(i_NO3) * 10.0 / (1.4 * 30) # (25/03/2025 - EJ) pour les autres types de sol
                 SNO3 = repr(temp_SNO3)[0:4]  # convert float to string
             else:
                 # temp_SH2O = fc[nline]  # float
