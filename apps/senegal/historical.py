@@ -8,10 +8,12 @@ import base64
 import io
 
 import dash
-import dash_html_components as html
-import dash_core_components as dcc
 import dash_bootstrap_components as dbc
 import dash_table
+from dash import html
+from dash import dcc
+import dash_bootstrap_components as dbc
+from dash import dash_table
 
 from dash.dependencies import Input, Output, State
 from dash_extensions import Download
