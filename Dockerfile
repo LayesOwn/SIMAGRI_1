@@ -24,6 +24,7 @@ RUN pip3 install --no-cache-dir \
 
 # Copier les fichiers de l'application
 COPY ./*.py /home/SIMAGRI/
+COPY ./apps/ /home/SIMAGRI/apps/
 COPY ./assets/ /home/SIMAGRI/assets/
 COPY ./data/ /home/SIMAGRI/data/
 COPY ./shared/ /home/SIMAGRI/shared/

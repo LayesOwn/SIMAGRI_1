@@ -1,110 +1,83 @@
-import dash_html_components as html
-import dash_core_components as dcc
+# -*- coding: utf-8 -*-
+"""
+SIMAGRI Sénégal - Point d'entrée de l'application
+Version simplifiée pour le Sénégal uniquement
+"""
 
-from dash.dependencies import Input, Output, State
+from dash import html, dcc
+from dash.dependencies import Input, Output
 
 import os
-import sys
 
 from app import app
 from app import server
 
 from navbar import navbar
+
+# Import des modules Sénégal (depuis apps/senegal/)
+from apps.senegal import about
+from apps.senegal import historical
+from apps.senegal import forecast_FResampler as forecast
+
+##########################################################################
+# Configuration Sénégal
 ##########################################################################
 
-
-##########################################################################
-# Variable for the country determines which localization of simagri to run
-country = sys.argv[1]
-
-# app will not work if nothing is imported
-if country == "ethiopia":
-    from apps.ethiopia import about
-    from apps.ethiopia import historical
-    from apps.ethiopia import forecast_FResampler as forecast
-    # from apps.ethiopia import forecast_WGEN as forecast
-
-    # from apps.ethiopia import forecast as forecast_choice
-    # from apps.ethiopia import forecast_FResampler as forecast_rs
-    # from apps.ethiopia import forecast_WGEN as forecast_wg
-elif country == "senegal":
-    from apps.senegal import about
-  # from apps.senegal import historical
-    from apps.senegal import historical
-    # from apps.senegal import historical_FR
-    from apps.senegal import forecast_FResampler as forecast
-    # from apps.senegal import forecast_WGEN as forecast
-    #from apps.senegal import Carte         # j'importe la carte
-elif country == "colombia":
-    from apps.colombia import about
-    from apps.colombia import historical
-    from apps.colombia import forecast_FResampler as forecast
-    # from apps.colombia import forecast_WGEN as forecast
-else:
-    pass
-
-apps = {
-    "ethiopia": { 
-        "logo": app.get_asset_url("CWP_IRI_ET.gif"), #simagri-logo-2.png"), #ethioagroclimate.png"),
-        "tutorial": "https://sites.google.com/iri.columbia.edu/simagri-ethiopia/simagri-tutorial",
-        "feedback": "https://sites.google.com/iri.columbia.edu/simagri-ethiopia/user-feedback-survey-form",
-        "paths": {
-            "/about": about.layout,
-            "/historical": historical.layout,
-            "/forecast": forecast.layout,
-            # "/forecast": forecast_choice.layout,
-            # "/forecast-rs": forecast_rs.layout,
-            # "/forecast-wg": forecast_wg.layout,
-        },
-    },
-    "senegal":  { 
-        "logo": app.get_asset_url("CWP_IRI_ISRA_senegal.GIF"), #IRI_ISRA_senegal.gif"),
-        # "tutorial": "https://sites.google.com/iri.columbia.edu/simagri-senegal/simagri-tutorial",
-        "tutorial": "https://sites.google.com/iri.columbia.edu/simagri-french/simagri-tutorial",
-        "feedback": "https://sites.google.com/iri.columbia.edu/simagri-senegal/user-feedback-survey-form",
-        "paths": {
-            "/about": about.layout,
-            "/historical": historical.layout, 
-            "/forecast": forecast.layout,
-            #"/Carte": Carte.layout,               # j'integre la carte
-        },
-    },
-    "colombia": { 
-        "logo": app.get_asset_url("CWP_IRI_CO_logo.GIF"), #SIMAGRI_CO_logo.GIF"), #
-        "tutorial": "https://sites.google.com/iri.columbia.edu/simagri-colombia/home",
-        "feedback": "https://sites.google.com/iri.columbia.edu/simagri-colombia/user-feedback-survey-form",
-        "paths": {
-            "/about": about.layout, 
-            "/historical": historical.layout, 
-            "/forecast": forecast.layout,
-        },
+APP_CONFIG = {
+    "logo": app.get_asset_url("CWP_IRI_ISRA_senegal.GIF"),
+    "tutorial": "https://sites.google.com/iri.columbia.edu/simagri-french/simagri-tutorial",
+    "feedback": "https://sites.google.com/iri.columbia.edu/simagri-senegal/user-feedback-survey-form",
+    "paths": {
+        "/about": about.layout,
+        "/historical": historical.layout,
+        "/forecast": forecast.layout,
     },
 }
 
+##########################################################################
+# Layout principal
+##########################################################################
+
 body = html.Div([
-  dcc.Location(id="url", refresh=False),
-  html.Div(id="page-content")
-], id="body" )
+    dcc.Location(id="url", refresh=False),
+    html.Div(id="page-content")
+], id="body")
 
-app.layout = html.Div([navbar(apps[country]["logo"], country.capitalize(), apps[country]["tutorial"], apps[country]["feedback"] ), body])
+app.layout = html.Div([
+    navbar(APP_CONFIG["logo"], "Senegal", APP_CONFIG["tutorial"], APP_CONFIG["feedback"]),
+    body
+])
 
-## URL callback
-################
+##########################################################################
+# Callback de navigation
+##########################################################################
+
 @app.callback(
     Output('page-content', 'children'),
     [Input('url', 'pathname')],
 )
-
 def display_page(pathname):
-    if pathname in [*apps[country]["paths"]]:
-        return apps[country]["paths"][pathname]
-    # return "Nothing here"
-    return "Climate-Agriculture Modeling Decision Support Tool,  SIMAGRI. Please click the main menu bars for SIMAGRI analysis"
+    """Affiche la page correspondant au chemin URL."""
+    if pathname in APP_CONFIG["paths"]:
+        return APP_CONFIG["paths"][pathname]
     
+    # Page d'accueil par défaut (en français)
+    return html.Div([
+        html.H3("SIMAGRI - Sénégal"),
+        html.P("Outil d'aide à la décision pour la modélisation climato-agricole."),
+        html.P("Cliquez sur le menu pour accéder aux analyses."),
+    ], className="text-center p-5")
+
+
+##########################################################################
+# Démarrage du serveur
+##########################################################################
 
 port = int(os.environ.get("PORT", 5000))
 
 if __name__ == "__main__":
-    app.run_server(debug=False,
-                   host="0.0.0.0",
-                   port=port)
+    app.run_server(
+        debug=False,
+        host="0.0.0.0",
+        port=port
+    )

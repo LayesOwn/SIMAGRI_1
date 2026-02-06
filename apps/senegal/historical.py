@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 import numpy as np
 import pandas as pd
 import plotly.express as px
@@ -156,7 +157,7 @@ layout = html.Div([
           html.Div([
             html.Header(
               html.B(
-                "Données d’entrée de la simulation (Historique)",
+                "Données d'entrée de la simulation (Historique)",
               ),
             className=" card-header",
             ),
@@ -318,7 +319,7 @@ layout = html.Div([
                   row=True
                   ),
                   dbc.FormGroup([ # Year to Highlight
-                    dbc.Label("7) Une année à mettre en évidence", html_for="target-year", sm=3, align="start", ),
+                    dbc.Label("7) Une année à  mettre en évidence", html_for="target-year", sm=3, align="start", ),
                     dbc.Col([
                       dbc.Input(type="number", id="target-year", placeholder="YYYY", value="2016",min=1983, max=2016,   required="required", ),
                       dbc.FormText("Tapez une année spécifique dont vous vous souvenez (par exemple, une année de sécheresse) et que vous souhaitez comparer avec une distribution climatologique complète."),
@@ -365,7 +366,7 @@ layout = html.Div([
                   row=True
                   ),
                   dbc.FormGroup([ # Initial Soil Water Condition
-                    dbc.Label("9) État hydrique initial du sol", html_for="ini-H2O", sm=3, align="start", ),
+                    dbc.Label("9) à‰tat hydrique initial du sol", html_for="ini-H2O", sm=3, align="start", ),
                     dbc.Col([
                       dcc.Dropdown(
                         id="ini-H2O",
@@ -944,7 +945,7 @@ layout = html.Div([
                             id="ir_method",
                             options=[
                               {"label": "asperseur", "value": "IR004"},
-                              {"label": "irrigation goutte à goutte", "value": "IR005"},  #IR005    Drip or trickle, mm   
+                              {"label": "irrigation goutte à  goutte", "value": "IR005"},  #IR005    Drip or trickle, mm   
                               {"label": "sillon", "value": "IR001"},
                               {"label": "inondation", "value": "IR001"},
                             ],
@@ -1119,20 +1120,20 @@ layout = html.Div([
                         ],),
                         dbc.Row([
                           dbc.Col(
-                            dbc.Label("Coût de l'engrais", html_for="fert-cost", className="text-center", ),
+                            dbc.Label("Coà»t de l'engrais", html_for="fert-cost", className="text-center", ),
                           ),
                           dbc.Col(
                             dbc.FormGroup([
                               dbc.Input(type="number", id="fert-cost", value=0, min=0, step=0.1, required="required", ),
                               dbc.FormText("[CFA/N kg]"),
                               # dbc.FormText("If you pay X CFA for 1 bag of 50kg fertilizer (N:P:K = 6:20:10 for peanut), your fertilizer cost = X*100/(6*50) [CFA/N kg]"),
-                              dbc.FormText("Si vous payez X FCFA pour 1 sac d'engrais de 50 kg (N:P:K = 6:20:10 pour l'arachide), votre coût d'engrais = X*100/(6*50) [CFA/N kg]."),
+                              dbc.FormText("Si vous payez X FCFA pour 1 sac d'engrais de 50 kg (N:P:K = 6:20:10 pour l'arachide), votre coà»t d'engrais = X*100/(6*50) [CFA/N kg]."),
                             ],),
                           ),
                         ],),
                         dbc.Row([
                           dbc.Col(
-                            dbc.Label("Coût des semences", html_for="seed-cost", className="text-center", ),
+                            dbc.Label("Coà»t des semences", html_for="seed-cost", className="text-center", ),
                           ),
                           dbc.Col(
                             dbc.FormGroup([
@@ -1143,7 +1144,7 @@ layout = html.Div([
                         ],),
                         dbc.Row([
                           dbc.Col(
-                            dbc.Label("Coût de l'irrigation", html_for="irrigation-cost", className="text-center", ),
+                            dbc.Label("Coà»t de l'irrigation", html_for="irrigation-cost", className="text-center", ),
                           ),
                           dbc.Col(
                             dbc.FormGroup([
@@ -1154,7 +1155,7 @@ layout = html.Div([
                         ],),
                         dbc.Row([
                           dbc.Col(
-                            dbc.Label("Autres coûts variables", html_for="variable-costs", className="text-center", ),
+                            dbc.Label("Autres coà»ts variables", html_for="variable-costs", className="text-center", ),
                           ),
                           dbc.Col(
                             dbc.FormGroup([
@@ -1165,7 +1166,7 @@ layout = html.Div([
                         ],),
                         dbc.Row([
                           dbc.Col(
-                            dbc.Label("FCoûts fixes", html_for="fixed-costs", className="text-center", ),
+                            dbc.Label("FCoà»ts fixes", html_for="fixed-costs", className="text-center", ),
                           ),
                           dbc.Col(
                             dbc.FormGroup([
@@ -1261,12 +1262,12 @@ layout = html.Div([
                     {"id": "AutoIR_depth", "name": "AutoIR_depth"},
                     {"id": "AutoIR_thres", "name": "AutoIR_thres"},
                     {"id": "AutoIR_eff", "name": "AutoIR_eff"},
-                    {"id": "CropPrice", "name": "Coût de la culture à la récolte" }, #Crop Price"},
-                    {"id": "NFertCost", "name": "Coût de l'engrais"}, # Fertilizer Cost"},
-                    {"id": "SeedCost", "name": "Coût des semences"}, # Seed Cost"},
-                    {"id": "IrrigCost", "name": "Coût de l'irrigation"}, # Irrigation Cost"},
-                    {"id": "OtherVariableCosts", "name": "Autres coûts variables"}, # Other Variable Costs"},
-                    {"id": "FixedCosts", "name": "Coûts fixes" }, #Fixed Costs"},
+                    {"id": "CropPrice", "name": "Coà»t de la culture à  la récolte" }, #Crop Price"},
+                    {"id": "NFertCost", "name": "Coà»t de l'engrais"}, # Fertilizer Cost"},
+                    {"id": "SeedCost", "name": "Coà»t des semences"}, # Seed Cost"},
+                    {"id": "IrrigCost", "name": "Coà»t de l'irrigation"}, # Irrigation Cost"},
+                    {"id": "OtherVariableCosts", "name": "Autres coà»ts variables"}, # Other Variable Costs"},
+                    {"id": "FixedCosts", "name": "Coà»ts fixes" }, #Fixed Costs"},
                 ]),
                 data=[
               #      dict(**{param: "N/A" for param in sce_col_names}) for i in range(1, 2)
@@ -1352,7 +1353,7 @@ layout = html.Div([
                 dcc.RangeSlider(
                   id="season-slider",
                   min=1, max=12, step=1,
-                  marks={1: "janv.", 2: "fév",3: "mars", 4: "avr", 5: "mai", 6: "juin", 7: "juil", 8: "août", 9: "sept.", 10: "oct.", 11: "nov.", 12: "déc."},
+                  marks={1: "janv.", 2: "fév",3: "mars", 4: "avr", 5: "mai", 6: "juin", 7: "juil", 8: "aoà»t", 9: "sept.", 10: "oct.", 11: "nov.", 12: "déc."},
                   value=[6, 9]
                 ),
               ],

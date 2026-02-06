@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 import numpy as np
 import pandas as pd
 import plotly.express as px
@@ -378,7 +379,7 @@ layout = html.Div([
                   row=True
                   ),
                   dbc.FormGroup([ # Initial Soil Water Condition
-                    dbc.Label("7) État hydrique initial du sol", html_for="ini-H2O_frst", sm=3, align="start", ),
+                    dbc.Label("7) à‰tat hydrique initial du sol", html_for="ini-H2O_frst", sm=3, align="start", ),
                     dbc.Col([
                       dcc.Dropdown(
                         id="ini-H2O_frst", 
@@ -970,7 +971,7 @@ layout = html.Div([
                             id="ir_method_frst", 
                             options=[
                               {"label": "asperseur", "value": "IR004"},
-                              {"label": "irrigation goutte à goutte", "value": "IR005"},  #IR005    Drip or trickle, mm   
+                              {"label": "irrigation goutte à  goutte", "value": "IR005"},  #IR005    Drip or trickle, mm   
                               {"label": "sillon", "value": "IR001"},
                               {"label": "inondation", "value": "IR001"},
                             ], 
@@ -1145,20 +1146,20 @@ layout = html.Div([
                         ],),
                         dbc.Row([
                           dbc.Col(
-                            dbc.Label("Coût de l'engrais", html_for="fert-cost_frst", className="text-center", ),
+                            dbc.Label("Coà»t de l'engrais", html_for="fert-cost_frst", className="text-center", ),
                           ),
                           dbc.Col(
                             dbc.FormGroup([
                               dbc.Input(type="number", id="fert-cost_frst", value=0, min=0, step=0.1, required="required", ),
                               dbc.FormText("[CFA/N kg]"),
                               # dbc.FormText("If you pay X CFA for 1 bag of 50kg fertilizer (N:P:K = 6:20:10 for peanut), your fertilizer cost = X*100/(6*50) [CFA/N kg]"),
-                              dbc.FormText("Si vous payez X FCFA pour 1 sac d'engrais de 50 kg (N:P:K = 6:20:10 pour l'arachide), votre coût d'engrais = X*100/(6*50) [CFA/N kg]."),
+                              dbc.FormText("Si vous payez X FCFA pour 1 sac d'engrais de 50 kg (N:P:K = 6:20:10 pour l'arachide), votre coà»t d'engrais = X*100/(6*50) [CFA/N kg]."),
                             ],),
                           ),
                         ],),
                         dbc.Row([
                           dbc.Col(
-                            dbc.Label("Coût des semences", html_for="seed-cost_frst", className="text-center", ),
+                            dbc.Label("Coà»t des semences", html_for="seed-cost_frst", className="text-center", ),
                           ),
                           dbc.Col(
                             dbc.FormGroup([
@@ -1169,7 +1170,7 @@ layout = html.Div([
                         ],),
                         dbc.Row([
                           dbc.Col(
-                            dbc.Label("Coût de l'irrigation", html_for="irrigation-cost", className="text-center", ),
+                            dbc.Label("Coà»t de l'irrigation", html_for="irrigation-cost", className="text-center", ),
                           ),
                           dbc.Col(
                             dbc.FormGroup([
@@ -1180,7 +1181,7 @@ layout = html.Div([
                         ],),
                         dbc.Row([
                           dbc.Col(
-                            dbc.Label("Autres coûts variables", html_for="variable-costs_frst", className="text-center", ),
+                            dbc.Label("Autres coà»ts variables", html_for="variable-costs_frst", className="text-center", ),
                           ),
                           dbc.Col(
                             dbc.FormGroup([
@@ -1191,7 +1192,7 @@ layout = html.Div([
                         ],),
                         dbc.Row([
                           dbc.Col(
-                            dbc.Label("Coûts fixes", html_for="fixed-costs_frst", className="text-center", ),
+                            dbc.Label("Coà»ts fixes", html_for="fixed-costs_frst", className="text-center", ),
                           ),
                           dbc.Col(
                             dbc.FormGroup([
@@ -1291,12 +1292,12 @@ layout = html.Div([
                     {"id": "AutoIR_depth", "name": "AutoIR_depth"},
                     {"id": "AutoIR_thres", "name": "AutoIR_thres"},
                     {"id": "AutoIR_eff", "name": "AutoIR_eff"},
-                    {"id": "CropPrice", "name": "Coût de la culture à la récolte" }, #Crop Price"},
-                    {"id": "NFertCost", "name": "Coût de l'engrais"}, # Fertilizer Cost"},
-                    {"id": "SeedCost", "name": "Coût des semences"}, # Seed Cost"},
-                    {"id": "IrrigCost", "name": "Coût de l'irrigation"}, # Irrigation Cost"},
-                    {"id": "OtherVariableCosts", "name": "Autres coûts variables"}, # Other Variable Costs"},
-                    {"id": "FixedCosts", "name": "Coûts fixes" }, #Fixed Costs"},
+                    {"id": "CropPrice", "name": "Coà»t de la culture à  la récolte" }, #Crop Price"},
+                    {"id": "NFertCost", "name": "Coà»t de l'engrais"}, # Fertilizer Cost"},
+                    {"id": "SeedCost", "name": "Coà»t des semences"}, # Seed Cost"},
+                    {"id": "IrrigCost", "name": "Coà»t de l'irrigation"}, # Irrigation Cost"},
+                    {"id": "OtherVariableCosts", "name": "Autres coà»ts variables"}, # Other Variable Costs"},
+                    {"id": "FixedCosts", "name": "Coà»ts fixes" }, #Fixed Costs"},
                 ]),
                 data=[
           #          dict(**{param: "N/A" for param in sce_col_names}) for i in range(1, 2)
